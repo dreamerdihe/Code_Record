@@ -1,4 +1,4 @@
-class Solution79 {
+class Solution {
     public boolean exist(char[][] board, String word) {
         if(board.length == 0 && word.length() == 0) {
             return true;
