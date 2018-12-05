@@ -26,4 +26,7 @@ This repository is for recording my solutions to leetcode problems. And my goal 
 * 222: An idea of binary search implementation based on Tree. Define the mid as the node obtained by left -> right -> right -> last layer. And pay attention to the operand `>>` / `<<`. For example, `1 << 2` equals to `2^2`, but `1 << 2 - 1` equals to `2^(2 - 1)`.
 * 209: The basic version is `O(n)`, which uses two pointers. For the follow up, `O(nlogn)`, use binary search on the cumulative array, which is because it must be a ascending array and `a[j] - a[i]` is the sum of the subarray from `i + 1` to `j`.
 * 454: It is very easy, and just a trade off between speed and storage. But I don't know why it is in tha binary search tag.
+* 108: very easy
+* 695: Just use flood method in dfs / bfs
+* 105: This is a problem to improve your understanding of preorder and inorder. Remember you can use the number of node in the left in inorder array to compute where is the seperation point in preorder.
   
