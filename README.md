@@ -2,6 +2,14 @@
 
 This repository is for recording my solutions to leetcode problems. And my goal is to solve at least 400 problems with at least 3 problems per day.
 
+## Remarks for Java
+
+### List and Array
+* There is no shortcut for converting from int[] to List<Integer> as Arrays.asList does not deal with boxing and will just create a List<int[]> which is not what you want. You have to make a utility method.
+
+### Map to String
+`Arrays.toString(map.entrySet().toArray())`
+
 ## Remarks
 
 * For the graph problem solved by flood method, we can use bfs with queue non-recursivly or dfs recursivly. eg: 286, 130, 200, 364.
@@ -28,7 +36,11 @@ This repository is for recording my solutions to leetcode problems. And my goal 
 * 454 4Sum II: It is very easy, and just a trade off between speed and storage. But I don't know why it is in tha binary search tag.
 * 108 Convert Sorted Array to Binary Search Tree: very easy
 * 695 Max Area of Island: Just use flood method in dfs / bfs
-* 105 Construct Binary Tree from Preorder and Inorder Traversal: This is a problem to improve your understanding of preorder and inorder. Remember you can use the number of node in the left in inorder array to compute where is the seperation point in preorder.
+* 105 & 106: Construct Binary Tree from Preorder/Postorder and Inorder Traversal: This is a problem to improve your understanding of preorder/postorder and inorder. Remember you can use the number of node in the left in inorder array to compute where is the seperation point in preorder.
 * 394 Decode String: Two solutions: recursion and stack. I only write a recursion verion. Pay attention to detecting the right place of the left and right brackets. Also, pay attention to that the repeat number is not a digit, it may be `100`. 
 * 109 Convert Sorted List to Binary Search Tree: it is very similiar with 108. Remember you have to consider when the mid point is the head of the linklist. Also don't forget to set the mid point's next to null.
 * 690 Employee Importance: Just dfs
+* 743 Network Delay Time: use Dijkstra algorithm. Use a graph to represent the graph is lower than use matrix. `reminder for the matrix representation`
+* 542 01 Matrix: use bfs. `reminder for the dp solution`
+* 332 Reconstruct Itinerary: DFS, 1. the exit consition 2. bottom to top // top to bottom
+* 417 Pacific Atlantic Water Flow: The excellent practice for flood method. Flood the Pacific and Atlantic boolean array from the four edge seperatly. Note, do not check every entry of the matrix whether it is a desired entry.
