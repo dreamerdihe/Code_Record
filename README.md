@@ -10,6 +10,13 @@ This repository is for recording my solutions to leetcode problems. And my goal 
 ### Map to String
 `Arrays.toString(map.entrySet().toArray())`
 
+### int to char
+```java
+int a = 10;
+char aChar = (char)('0' + a);
+// return '10'
+```
+
 ## Remarks
 
 * For the graph problem solved by flood method, we can use bfs with queue non-recursivly or dfs recursivly. eg: 286, 130, 200, 364.
@@ -44,3 +51,6 @@ This repository is for recording my solutions to leetcode problems. And my goal 
 * 542 01 Matrix: use bfs. `reminder for the dp solution`
 * 332 Reconstruct Itinerary: DFS, 1. the exit consition 2. bottom to top // top to bottom
 * 417 Pacific Atlantic Water Flow: The excellent practice for flood method. Flood the Pacific and Atlantic boolean array from the four edge seperatly. Note, do not check every entry of the matrix whether it is a desired entry.
+* 733 Flood Fill: very easy, just use flood method
+* 513 Find Bottom Left Tree Value: easy BFS/DFS. But seems dfs is faster than bfs
+* 529 Minesweeper: Note write a function to check the number of the mines in position's 8 neighbor. If the neighbors contain mines, return.
