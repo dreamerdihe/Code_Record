@@ -17,6 +17,9 @@ char aChar = (char)('0' + a);
 // return '10'
 ```
 
+### String骚操作：
+ s.startsWith(word)
+
 ## Remarks
 
 * For the graph problem solved by flood method, we can use bfs with queue non-recursivly or dfs recursivly. eg: 286, 130, 200, 364.
