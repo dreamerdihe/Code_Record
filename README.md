@@ -57,3 +57,5 @@ char aChar = (char)('0' + a);
 * 733 Flood Fill: very easy, just use flood method
 * 513 Find Bottom Left Tree Value: easy BFS/DFS. But seems dfs is faster than bfs
 * 529 Minesweeper: Note write a function to check the number of the mines in position's 8 neighbor. If the neighbors contain mines, return.
+* 957 Prison Cells After N Days: Time Machine problem. Since there are only `2 ^ 6`  possible conditions, so if `N > 2 ^ 6 = 64` there must exist a loop.
+* 958 Check Completeness of a Binary Tree: First get the height of the tree. Seconde use bfs and at the last layer, you have to consider the situation that when root.left is null, there still some node after it. Look the code.
