@@ -19,6 +19,13 @@ char aChar = (char)('0' + a);
 
 ### String骚操作：
  s.startsWith(word)
+ ```java
+ String s = "111";
+ Integer.parseInt(s);
+ Integer.parseInt(s, 2);
+ // 111
+ // 7
+ ```
 
 ## Remarks
 
