@@ -39,6 +39,24 @@ max = max(ending, max);
 * 647 Palindromic Substrings: 这道题使用extend方法。具体操作是：考虑所有以`s[i]`为或`s[i:i+1]`中心的palindrome.这道题关键之处了如果`s[i:j]`不是palindrome了，`s[i-1:j+1]`也一定不会是palindrome。而我一开始使用的方法，即考虑以`s[i]`为开头的所有子字符串是不是palindrom就没有利用到上述的这个性质。所以palindrome的最核心点左右关于palindrom的判断都是是从中心开始的。
 * 413 Arithmetic Slices: 这道题我用了公式，没有用dp
 * 91 Decode Ways: 注意出现0的情况。 比如“0”， “101”这样的情况。 dp[i]表示前i个元素有多少种decode的方式。然后`dp[i] = dp[i-1](s[i] != 0) + dp[i - 2](s[i-1:i] < 27)`
+* 322 Coin Change: 注意处理dp[i] = -1时的情况。 dp[i]表示amount = i时最少换多少硬币。 另外 初始值设为amount + 1在之后dp操作中回简单点
+* 357 Count Numbers with Unique Digits: 不算是一个好题。就是最简单的排列组合
+* 309 Best Time to Buy and Sell Stock with Cooldown: 这道题太巧妙，需要重新做一遍。思考：关于dp，有一个的定义。状态(state): 在这题中，状态就是`buy, sell, rest(包含cooldown)`. 这就类似一个状态机一样的东西。所以要维护3个状态的dp数组。但是这道题可以通过证明 表示只维护两个就行。`sell[i]`表示在第i天时最后操作的是sell的情况下的profit, `buy[i]`表示在第i天时最后操作是buy的情况下的profit。那么:
+```java
+                        buy[i] = max(buy[i - 1], sell[i - 2] - price) 
+                        sell[i] = max(buy[i - 1] + price, sell[i - 1])
+```
+* 264 Ugly Number II: 这道题很强: 
+```
+(1) 1×2, 2×2, 3×2, 4×2, 5×2, …
+(2) 1×3, 2×3, 3×3, 4×3, 5×3, …
+(3) 1×5, 2×5, 3×5, 4×5, 5×5, …
+```
+利用类似于merge sort的思想去做这道题。 但是注意fact每次用的是dp[fact2]里的值。即：k x 2中的k只能是ugly unmber因而一定在dp中。
+* 300 Longest Increasing Subsequence: 这题也很强。这题只想出来了O(n^2)的dp方法。其方法就是利用一个dp数组, dp[i]表示nums[0:i]中的最长子序列的长度。考虑dp[i+1]: 对于nums[i+1], 如果他大于nums[k](k < i+1) 那么我们就可以把nums[i+1]拼在dp[k]之后扩展这个最长子序列.但是我们想要最长的子序列，那我们就把另dp[i+1]为上述方法拓展出来的最长子序列的长度。
+
+
+
  
 
 
