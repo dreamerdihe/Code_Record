@@ -70,3 +70,5 @@ char aChar = (char)('0' + a);
 * 529 Minesweeper: Note write a function to check the number of the mines in position's 8 neighbor. If the neighbors contain mines, return.
 * 957 Prison Cells After N Days: Time Machine problem. Since there are only `2 ^ 6`  possible conditions, so if `N > 2 ^ 6 = 64` there must exist a loop.
 * 958 Check Completeness of a Binary Tree: First get the height of the tree. Seconde use bfs and at the last layer, you have to consider the situation that when root.left is null, there still some node after it. Look the code.
+* 698 Partition to K Equal Sum Subsets: backtracking. Use a visited array when you want to avoid the element access time in array without using set. And use a index start to backtracking
+

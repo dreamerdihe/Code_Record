@@ -8,6 +8,7 @@ max = max(ending, max);
 ```
 * 70 Climbing Stairs: easy DP: `A[i] = A[i-1] + A[i-2]` 其中`A[i]` 表示爬到第i层时有多少种可能性
 * 198 House Robber: easy DP: `A[i] = max(A[i-1], A[i-2] + nums[i])` 其中`A[i]`表示n=i时最多能偷多少钱。所以只偷前i间房的最大收益 = 偷了前i-1间房的收益 与 偷了前i-2间房的收益加上偷第i件的收益合 之间的最大值
+* 213 House Robber II: 遇上一题不同，要维护两个dp数组，一个是从从第一间房开始偷，一个是从第二间房开始偷。剩余的与robber1相同
 * 338 Counting Bits:  `A[2^k + i] = 1 + A[i]`
 ```
 | num        | binary      | range  |
@@ -58,6 +59,13 @@ max = max(ending, max);
 * 221 Maximal Square: 这道题是`O(n^2)`的。维持一个`dp[m][n]`的数组, 用来记录下由`(0, 0)`和`(i, j)`生成的矩形中以`(i, j)`为右下顶点的`‘1’`方阵变长。从而`dp[i][j] = 1 + min(dp[i-1][j-1], dp[i][j-1], dp[i-1][j])`
 * 375 Guess Number Higher or Lower II: 这道题很强。关键点在于dp数组如何计算。列出矩阵，发现想计算`dp[1][j]`必须要先计算`dp[1][i]`与`dp[i][j]`.而`dp[i][j]`要有`dp[i][k]`到`dp[k][j]`所以要从dp[j][j] -> dp[i][k]这样计算。可能写的不太对 一定要自己画个矩阵比划比划。
 * 516 Longest Palindromic Subsequence: 这道题，是要记录一个dp[i][j]表示string[i][j]之中的最多含有几个palindorme.如果string[i] == string[j] 那么 dp[i][j] = 2 + dp[i+1][j-1] 否则则有：dp[i][j] = max(dp[i+1][j], dp[i][j-1])
+* 718 Maximum Length of Repeated Subarray: 这道题有更高级的方法的以做到O((M+N)∗log(min(M,N))). 但是太难没看明白。我只利用了dp偶到了O(MN).`dp[i][j]`表示了以`s1[i]`和`s2[j]`开始匹配的话最长匹配多少个字。则如果`s1[i] == s2[j]`有`dp[i][j] = 1 + dp[i+1][j+1]`，否则有`dp[i][j] = 0`.最后的结果为‘dp[i][j]’中最大值
+* 304 Range Sum Query 2D - Immutable: 这道题不难。dp[i][j]储存(0,0)到(i,j)的矩阵的sum
+* 377 Combination Sum IV: 有两种方法：一种是dp数组，一种是memorize。dp数组的话 dp[i]表示target = i时的结果。则`dp[i] = dp[i] + dp[i - num] (for num in nums)`
+
+
+
+
 
 
 
