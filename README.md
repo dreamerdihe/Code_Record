@@ -10,6 +10,10 @@ This repository is for recording my solutions to leetcode problems. And my goal 
 ### Map to String
 `Arrays.toString(map.entrySet().toArray())`
 
+### Array to String
+* 1d array: `System.out.println(Arrays.toString(array))`
+* 2d array: `System.out.println(Arrays.deepToString(array))`
+
 ### int to char
 ```java
 int a = 10;

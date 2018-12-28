@@ -53,7 +53,15 @@ max = max(ending, max);
 (3) 1×5, 2×5, 3×5, 4×5, 5×5, …
 ```
 利用类似于merge sort的思想去做这道题。 但是注意fact每次用的是dp[fact2]里的值。即：k x 2中的k只能是ugly unmber因而一定在dp中。
-* 300 Longest Increasing Subsequence: 这题也很强。这题只想出来了O(n^2)的dp方法。其方法就是利用一个dp数组, dp[i]表示nums[0:i]中的最长子序列的长度。考虑dp[i+1]: 对于nums[i+1], 如果他大于nums[k](k < i+1) 那么我们就可以把nums[i+1]拼在dp[k]之后扩展这个最长子序列.但是我们想要最长的子序列，那我们就把另dp[i+1]为上述方法拓展出来的最长子序列的长度。
+* 300 Longest Increasing Subsequence: 这题也很强。这题只想出来了`O(n^2)`的dp方法。其方法就是利用一个dp数组, `dp[i]`表示`nums[0:i]`中的最长子序列的长度。考虑`dp[i+1]`: 对于`nums[i+1]`, 如果他大于`nums[k](k < i+1)` 那么我们就可以把`nums[i+1]`拼在`dp[k]`之后扩展这个最长子序列.但是我们想要最长的子序列，那我们就把另`dp[i+1]`为上述方法拓展出来的最长子序列的长度。
+* 343 Integer Break: 这道题最快的方法使用math的方法。但必须知道如果a想有其加数的乘积的最大值，则令其乘数尽量为2或者3; 而对于dp来说，`O(n^2)` 我们利用dp[i]储存n=i的结果，从而`dp[i] = max(dp[i], max(j, dp[j]) * max(dp[i-j], i-j))`
+* 221 Maximal Square: 这道题是`O(n^2)`的。维持一个`dp[m][n]`的数组, 用来记录下由`(0, 0)`和`(i, j)`生成的矩形中以`(i, j)`为右下顶点的`‘1’`方阵变长。从而`dp[i][j] = 1 + min(dp[i-1][j-1], dp[i][j-1], dp[i-1][j])`
+* 375 Guess Number Higher or Lower II: 这道题很强。关键点在于dp数组如何计算。列出矩阵，发现想计算`dp[1][j]`必须要先计算`dp[1][i]`与`dp[i][j]`.而`dp[i][j]`要有`dp[i][k]`到`dp[k][j]`所以要从dp[j][j] -> dp[i][k]这样计算。可能写的不太对 一定要自己画个矩阵比划比划。
+* 516 Longest Palindromic Subsequence: 这道题，是要记录一个dp[i][j]表示string[i][j]之中的最多含有几个palindorme.如果string[i] == string[j] 那么 dp[i][j] = 2 + dp[i+1][j-1] 否则则有：dp[i][j] = max(dp[i+1][j], dp[i][j-1])
+
+
+
+
 
 
 
