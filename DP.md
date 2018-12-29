@@ -35,7 +35,7 @@ max = max(ending, max);
 * 95 Unique Binary Search Trees II: 这道题与上一道题一样，但是注意要写一个以j为offset的clone函数，使从1～i的排列变为 1 + offset ～ i + offset的排列 
 * 279 Perfect Squares: `d[i]` 表示这道题n = i的结果。则`dp[i] = min(dp[i - j]) j = 1,4,9....,sqrt(i)^2`
 * 64 Minimum Path Sum: 属于虽短路径型问题 `O(m * n)`的时间复杂度 `O(m * n)`的空间复杂度。`dp[i][j]`表示走到`(i, j)`的最短路径的sum.状态转移方程 `dp[i][j] = gird[i][j] + min(dp[i-1][j], dp[i][j-1])`
-* 62 Unique Paths: 同64. dp[i][j]表示有多少条路径到达(i, j). 则状态转移方程为 `dp[i][j] = dp[i-1][j] + dp[i][j-1]`
+* 62&63 Unique PathsI & II: 同64. 对于I: dp[i][j]表示有多少条路径到达(i, j). 则状态转移方程为 `dp[i][j] = dp[i-1][j] + dp[i][j-1]`. 对于II: 只需要将obstacle[i][j] == 1的dp[i][j]设为0就行了
 * 303 Range Sum Query - Immutable: 太简单。
 * 647 Palindromic Substrings: 这道题使用extend方法。具体操作是：考虑所有以`s[i]`为或`s[i:i+1]`中心的palindrome.这道题关键之处了如果`s[i:j]`不是palindrome了，`s[i-1:j+1]`也一定不会是palindrome。而我一开始使用的方法，即考虑以`s[i]`为开头的所有子字符串是不是palindrom就没有利用到上述的这个性质。所以palindrome的最核心点左右关于palindrom的判断都是是从中心开始的。
 * 413 Arithmetic Slices: 这道题我用了公式，没有用dp
@@ -47,6 +47,7 @@ max = max(ending, max);
                         buy[i] = max(buy[i - 1], sell[i - 2] - price) 
                         sell[i] = max(buy[i - 1] + price, sell[i - 1])
 ```
+* 714 Best Time to Buy and Sell Stock with Transaction Fee: 这道题和best time buy and sell stock一样。 
 * 264 Ugly Number II: 这道题很强: 
 ```
 (1) 1×2, 2×2, 3×2, 4×2, 5×2, …
@@ -62,6 +63,17 @@ max = max(ending, max);
 * 718 Maximum Length of Repeated Subarray: 这道题有更高级的方法的以做到O((M+N)∗log(min(M,N))). 但是太难没看明白。我只利用了dp偶到了O(MN).`dp[i][j]`表示了以`s1[i]`和`s2[j]`开始匹配的话最长匹配多少个字。则如果`s1[i] == s2[j]`有`dp[i][j] = 1 + dp[i+1][j+1]`，否则有`dp[i][j] = 0`.最后的结果为‘dp[i][j]’中最大值
 * 304 Range Sum Query 2D - Immutable: 这道题不难。dp[i][j]储存(0,0)到(i,j)的矩阵的sum
 * 377 Combination Sum IV: 有两种方法：一种是dp数组，一种是memorize。dp数组的话 dp[i]表示target = i时的结果。则`dp[i] = dp[i] + dp[i - num] (for num in nums)`
+* 740 Delete and Earn: 这道题类似与house robber。生成一个count数组，统计各个数出现的个数。然后house robber的方法做
+* 368 Largest Divisible Subset: 这道题非常精妙。思路是首先排序，然后dp[i]为包含第i个元素时的结果。那么计算dp[i]时我们需要找`nums[i] % nums[j] == 0时 dp[j]最长的 然后dp[i] = dp[j].add(nums[i])`.思路非常清晰，但是有两种实现。一种是用List存储所有`i`的结果，那么结果就是有最长length的那一组。但是使用list会非常慢。有一种更好的方法：使用array。
+    * 维护两个数组 prev[i]表示第i个数可整除的前一个数 和 length[i] 表示包含第i个元素的结果的长度。从而：
+    * `prev[i] = 最长length[j] && nums[i] % nums[j] == 0  (0 <= j < i)`
+    * 最后我们靠结果 prev[index]找会最长的那个subset。
+* 256 Paint House: 很简单，是最简单的矩阵中求最短路径问题。
+* 638 Shopping Offers:这道题是combination，需要用backtracking。但是注意，由于每一步我们都新生成一个needs list所以不需要backtracking中的关键步骤 添加一个删掉一个 这个操作。这题可以使用memorization
+
+
+
+
 
 
 
