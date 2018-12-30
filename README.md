@@ -71,4 +71,36 @@ char aChar = (char)('0' + a);
 * 957 Prison Cells After N Days: Time Machine problem. Since there are only `2 ^ 6`  possible conditions, so if `N > 2 ^ 6 = 64` there must exist a loop.
 * 958 Check Completeness of a Binary Tree: First get the height of the tree. Seconde use bfs and at the last layer, you have to consider the situation that when root.left is null, there still some node after it. Look the code.
 * 698 Partition to K Equal Sum Subsets: backtracking. Use a visited array when you want to avoid the element access time in array without using set. And use a index start to backtracking
+* 173 Binary Search Tree Iterator: use stack
+* 669 Trim a Binary Search Tree: Recursion. consider 3 cases: 
+```
+            root.val < L
+            root.val > R 
+            L <= root.val <= R
+```
+* 654 Maximum Binary Tree: Recursion. Easy
+* 99 Recover Binary Search Tree: Use dfs to compare the prev node with the current node during inorder traverse. If prev > current, then recorde prev and current. Fianlly, the two mistaked nodes are the first and the last recored nodes.
+* 543 Diameter of Binary Tree: Calculate the max diameter with calculate the height, since the diameter the is the maximal left height + right height.
+* 437 Path Sum III: This problem is very good!! 
+    * simply recursion: 
+    ```
+    pathSum(root, sum) = pathFrom(root, sum) + pathSum(root.left, sum) + pathSum(root.right, sum)
+    pathFrom(root, sum) = whether there exists a path from root satisfing the sum condition.
+    ```
+    
+    * [memorization(very tricky)](https://leetcode.com/problems/path-sum-iii/discuss/141424/Python-step-by-step-walk-through.-Easy-to-understand.-Two-solutions-comparison.-%3A-)
+* 538 Convert BST to Greater Tree: maintain the sum during the dfs with the right-root-left order.
+* 687 [Longest Univalue Path](https://leetcode.com/articles/longest-univalue-path/): This is a very good problem. You have to deal with the problem during the dfs.
+* 637 Average of Levels in Binary Tree: This problem could be solved by bfs and dfs. bfs is travial. For dfs, you have to record the height, and maintain a result array to record the sum of the nodes' value in each heigth.
+
+
+
+    
+
+
+
+
+
+
+
 
