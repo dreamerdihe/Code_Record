@@ -98,6 +98,18 @@ char aChar = (char)('0' + a);
 * 156 Binary Tree Upside Down: Use DFS recursion, everytime record previous node, let `node.left = prev; node.right = prev.right`. But remember! After assigning node, assign null to the `prev.left`and `prev.right`
 * 285 Inorder Successor in BST: Use recursion and the property of BST. we record the minimal node which is larger than target. So, if `node.val < targe.val`, the successor must exsits in `node.right`. If `node.val >= targe.val`, the successor could be the `node` or exists in `node.left`. If result doesn't exists in `node.left`, it must be the `node`.
 * 872 Leaf-Similar Trees: Find the leaves by DFS, and compare them
+* 501 Find Mode in Binary Search Tree: Use inorder traverse, so if there exists duplicate elements, they must be together. So we record the previous TreeNode, the max count, and the count of current node during dfs. If the current node has the same value as the previous node, we plus the count with 1, otherwise set count to 1. And if count == max count, we put the current node to the result. If count > max count, we clear our result and put the current node to it.
+* 450 Delete Node in a BST: Implementation of the node deletion in BST. Using recursion, when root.val < key, delete root.right, if root.val > key, delete root.left. `The most important part is when root.val == key, we have to find the min element in root.right, and delete that min element with replace root with it. `
+* 814 Binary Tree Pruning: Just recursion
+* 947 Most Stones Removed with Same Row or Column: **Remember to use Union Find solve this problem**
+* 475 Heaters:
+    * Use binary search O(n * logm) where n is the number of houses, m is the number of heaters. Get the houses's insert position in heaters array, the result is the largest distanc eamong all the min distance between the left heater and right heater.
+    * Use two pointer O(max(nlogn, mlogm)). You have to sort the two array. [Refer to this solution](https://leetcode.com/problems/heaters/discuss/95881/Simple-Java-Solution-with-2-Pointers)
+
+
+
+
+
 
 
 
