@@ -92,6 +92,17 @@ char aChar = (char)('0' + a);
 * 538 Convert BST to Greater Tree: maintain the sum during the dfs with the right-root-left order.
 * 687 [Longest Univalue Path](https://leetcode.com/articles/longest-univalue-path/): This is a very good problem. You have to deal with the problem during the dfs.
 * 637 Average of Levels in Binary Tree: This problem could be solved by bfs and dfs. bfs is travial. For dfs, you have to record the height, and maintain a result array to record the sum of the nodes' value in each heigth.
+* 606 Construct String from Binary Tree: Easy. Just a preorder traverse with some operation.
+* 652 Find Duplicate Subtrees: This problem  also depends on dfs. we record the serialization of the subtree in a HashMap and its count. So, whenever the count equals to 2, we put it into the result. And this process is bottom-up. 
+* 449 Serialize and Deserialize BST: just recursion
+* 156 Binary Tree Upside Down: Use DFS recursion, everytime record previous node, let `node.left = prev; node.right = prev.right`. But remember! After assigning node, assign null to the `prev.left`and `prev.right`
+* 285 Inorder Successor in BST: Use recursion and the property of BST. we record the minimal node which is larger than target. So, if `node.val < targe.val`, the successor must exsits in `node.right`. If `node.val >= targe.val`, the successor could be the `node` or exists in `node.left`. If result doesn't exists in `node.left`, it must be the `node`.
+* 872 Leaf-Similar Trees: Find the leaves by DFS, and compare them
+
+
+
+
+
 
 
 
