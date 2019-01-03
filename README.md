@@ -2,6 +2,8 @@
 
 This repository is for recording my solutions to leetcode problems. And my goal is to solve at least 400 problems with at least 3 problems per day.
 
+Anthor record for challenging leetcode is 
+
 ## Remarks for Java
 
 ### List and Array
@@ -30,6 +32,7 @@ char aChar = (char)('0' + a);
  // 111
  // 7
  ```
+## **[Remarks for DP](https://github.com/dreamerdihe/Leetcode/blob/master/DP.md)**
 
 ## Remarks
 
